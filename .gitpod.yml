@@ -1,5 +1,9 @@
-image:
-  file: .gitpod.Dockerfile
+ports:
+  - port: 3000
+    onOpen: open-preview
 tasks:
-  - name: Running MongoDB
-    command: mkdir -p data && mongod --dbpath data
+  - init: yarn
+    command: yarn dev
+github:
+  prebuilds:
+    pullRequestsFromForks: true
